@@ -1,7 +1,7 @@
 # Личный проект «Типотека» [![Build status][travis-image]][travis-url]
 
 * Студент: [Никита Сливканич](https://up.htmlacademy.ru/nodejs/3/user/903451).
-* Наставник: `Неизвестно`.
+* Наставник: [Вадим Осюков](https://htmlacademy.ru/profile/id1411353).
 
 ---
 
