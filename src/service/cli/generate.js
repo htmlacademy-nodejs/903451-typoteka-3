@@ -1,8 +1,6 @@
 'use strict';
 
 const {
-  getRandomInt,
-  shuffle,
   writeFile,
   stringifyContent,
   generateCategory,

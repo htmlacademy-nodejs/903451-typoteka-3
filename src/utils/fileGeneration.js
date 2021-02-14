@@ -17,7 +17,7 @@ const generateSentences = (sentencesList, minCount, maxCount) => {
 };
 
 const generateFullText = (sentencesList) => {
-  return generateSentences(sentencesList, MIN_COUNT,sentencesList.length - 1);
+  return generateSentences(sentencesList, MIN_COUNT, sentencesList.length - 1);
 };
 
 const generateDate = (monthInterval) => {
