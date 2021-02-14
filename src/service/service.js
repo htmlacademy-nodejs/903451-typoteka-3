@@ -7,6 +7,11 @@ const {
   ExitCode
 } = require(`../constants`);
 
+process.on(`uncaughtException`, (err) => {
+  console.error(err);
+  process.exit(ExitCode.error);
+});
+
 const userArguments = process.argv.slice(USER_ARGV_INDEX);
 const [userCommand] = userArguments;
 
