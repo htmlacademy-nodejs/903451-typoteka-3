@@ -3,8 +3,7 @@
 const {
   getRandomInt,
   shuffle,
-  writeFile,
-  stringifyContent
+  writeJSONFile
 } = require(`./common`);
 
 const {
@@ -18,8 +17,7 @@ const {
 module.exports = {
   getRandomInt,
   shuffle,
-  writeFile,
-  stringifyContent,
+  writeJSONFile,
   generateCategory,
   generateTitle,
   generateSentences,

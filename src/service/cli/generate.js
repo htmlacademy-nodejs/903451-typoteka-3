@@ -1,8 +1,7 @@
 'use strict';
 
 const {
-  writeFile,
-  stringifyContent,
+  writeJSONFile,
   generateCategory,
   generateTitle,
   generateSentences,
@@ -37,12 +36,12 @@ module.exports = {
   run(args) {
     const [count] = args;
     const countOffer = Number.parseInt(count, 10) || DEFAULT_COUNT;
-    const content = stringifyContent(generateOffers(countOffer));
+    const content = generateOffers(countOffer);
 
     if (countOffer >= MAX_COUNT) {
       return console.info(`Not more than 1000 offers`);
     }
 
-    return writeFile(FILE_NAME, content);
+    return writeJSONFile(FILE_NAME, content);
   }
 };

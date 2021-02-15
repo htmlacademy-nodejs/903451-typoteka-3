@@ -17,28 +17,19 @@ const shuffle = (someArray) => {
   return someArray;
 };
 
-const writeFile = (fileName, content) => {
+const writeJSONFile = (fileName, content) => {
   try {
-    fs.writeFileSync(fileName, content);
+    const data = JSON.stringify(content);
+    fs.writeFileSync(fileName, data);
     console.info(`Operation success. File created.`);
   } catch (err) {
-    console.error(`Can't write data to file...`);
-  }
-};
-
-const stringifyContent = (content) => {
-  try {
-    return JSON.stringify(content);
-  } catch (err) {
-    console.error(`Error occurred while stringifying content...`);
-    return null;
+    console.error(`Error occurred: ${err}`);
   }
 };
 
 module.exports = {
   getRandomInt,
   shuffle,
-  writeFile,
-  stringifyContent,
+  writeJSONFile,
 };
 
