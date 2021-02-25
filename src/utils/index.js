@@ -15,6 +15,8 @@ const {
   generateFullText,
 } = require(`./fileGeneration`);
 
+const {onClientConnect} = require(`./server`);
+
 module.exports = {
   getRandomInt,
   shuffle,
@@ -25,5 +27,6 @@ module.exports = {
   generateSentences,
   generateDate,
   generateFullText,
+  onClientConnect,
 };
 
