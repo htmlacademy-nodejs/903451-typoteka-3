@@ -15,7 +15,7 @@ const {
   generateFullText,
 } = require(`./fileGeneration`);
 
-const {onClientConnect} = require(`./server`);
+const {sendResponse} = require(`./server`);
 
 module.exports = {
   getRandomInt,
@@ -27,6 +27,6 @@ module.exports = {
   generateSentences,
   generateDate,
   generateFullText,
-  onClientConnect,
+  sendResponse,
 };
 
