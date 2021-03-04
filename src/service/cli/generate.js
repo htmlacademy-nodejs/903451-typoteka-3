@@ -37,19 +37,19 @@ const generateOffers = (count, titles, sentences, categories) => (
 module.exports = {
   name: `--generate`,
   async run(args) {
+    const [count] = args;
+    const countOffer = Number.parseInt(count, 10) || DEFAULT_COUNT;
+
+    if (countOffer > MAX_COUNT) {
+      return console.error(chalk.red(`Not more than 1000 offers`));
+    }
+
     const [titles, categories, sentences] = await Promise.all([
       readUTF8Content(FILE_TITLES_PATH),
       readUTF8Content(FILE_CATEGORIES_PATH),
       readUTF8Content(FILE_SENTENCES_PATH),
     ]);
-
-    const [count] = args;
-    const countOffer = Number.parseInt(count, 10) || DEFAULT_COUNT;
     const content = generateOffers(countOffer, titles, categories, sentences);
-
-    if (countOffer > MAX_COUNT) {
-      return console.error(chalk.red(`Not more than 1000 offers`));
-    }
 
     return writeJSONFile(FILE_NAME, content);
   }
