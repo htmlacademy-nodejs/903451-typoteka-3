@@ -1,7 +1,10 @@
 'use strict';
 
 const fs = require(`fs`).promises;
+const path = require(`path`);
 const chalk = require(`chalk`);
+
+const {UTF8_ENCODING_FORMAT} = require(`../constants`);
 
 const getRandomInt = (min, max) => {
   min = Math.ceil(min);
@@ -28,9 +31,25 @@ const writeJSONFile = async (fileName, content) => {
   }
 };
 
+const readUTF8Content = async (filePath) => {
+  try {
+    const content = await fs.readFile(path.resolve(__dirname, filePath), UTF8_ENCODING_FORMAT);
+    if (content) {
+      return content.split(`\n`)
+        .map((line) => line.trim())
+        .filter((line) => !!line);
+    }
+    return [];
+  } catch (err) {
+    console.error(chalk.red(`Error occurred while reading ${filePath}`));
+    throw new Error(err);
+  }
+};
+
 module.exports = {
   getRandomInt,
   shuffle,
   writeJSONFile,
+  readUTF8Content,
 };
 
