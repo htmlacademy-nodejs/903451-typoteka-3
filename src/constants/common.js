@@ -8,6 +8,8 @@ const MAX_COUNT = 1000;
 const DEFAULT_COMMAND = `--help`;
 
 const DEFAULT_PORT = 3000;
+const FRONT_CLIENT_PORT = 8080;
+
 const UTF8_ENCODING_FORMAT = `utf8`;
 const USER_ARGV_INDEX = 2;
 const HOME_PATH = `/`;
@@ -34,6 +36,7 @@ module.exports = {
   MAX_COUNT,
   DEFAULT_COMMAND,
   DEFAULT_PORT,
+  FRONT_CLIENT_PORT,
   UTF8_ENCODING_FORMAT,
   USER_ARGV_INDEX,
   HOME_PATH,
