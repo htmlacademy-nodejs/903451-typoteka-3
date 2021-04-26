@@ -10,6 +10,9 @@ const DEFAULT_COMMAND = `--help`;
 const DEFAULT_PORT = 3000;
 const FRONT_CLIENT_PORT = 8080;
 
+const PUBLIC_DIR = `public`;
+const TEMPLATES_DIR = `templates`;
+
 const UTF8_ENCODING_FORMAT = `utf8`;
 const USER_ARGV_INDEX = 2;
 const HOME_PATH = `/`;
@@ -37,6 +40,8 @@ module.exports = {
   DEFAULT_COMMAND,
   DEFAULT_PORT,
   FRONT_CLIENT_PORT,
+  PUBLIC_DIR,
+  TEMPLATES_DIR,
   UTF8_ENCODING_FORMAT,
   USER_ARGV_INDEX,
   HOME_PATH,
