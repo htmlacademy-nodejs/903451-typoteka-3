@@ -14,13 +14,12 @@ app.use(express.static(path.resolve(__dirname, PUBLIC_DIR)));
 app.set(`views`, path.resolve(__dirname, TEMPLATES_DIR));
 app.set(`view engine`, `pug`);
 
-app.use((req, res) => res.status(400).render(`errors/404`));
-
-/* eslint-disable no-unused-vars */
-app.use((err, req, res, next) => res.status(500).render(`errors/500`));
-
 app.use(`/articles`, articleRouter);
 app.use(`/my`, myRouter);
 app.use(`/`, mainRouter);
+
+/* eslint-disable no-unused-vars */
+app.use((err, req, res, next) => res.status(500).render(`errors/500`));
+app.use((req, res) => res.status(400).render(`errors/404`));
 
 app.listen(FRONT_CLIENT_PORT);
