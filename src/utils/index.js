@@ -15,8 +15,6 @@ const {
   generateFullText,
 } = require(`./fileGeneration`);
 
-const {sendResponse} = require(`./server`);
-
 module.exports = {
   getRandomInt,
   shuffle,
@@ -27,6 +25,5 @@ module.exports = {
   generateSentences,
   generateDate,
   generateFullText,
-  sendResponse,
 };
 
